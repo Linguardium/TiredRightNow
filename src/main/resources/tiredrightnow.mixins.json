@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "mod.linguardium.tiredrightnow.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "GameRulesMixin",
+    "IntegerRuleAccessor",
+    "PlayerEntityMixin",
+    "ServerPlayerEntityMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
