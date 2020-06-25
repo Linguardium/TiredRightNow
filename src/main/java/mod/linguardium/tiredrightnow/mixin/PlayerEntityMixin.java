@@ -15,7 +15,7 @@ public abstract  class PlayerEntityMixin {
 
     @Redirect(at=@At(target="Lnet/minecraft/world/World;isDay()Z",value="INVOKE"), method="tick")
     private boolean isItSleepyTime_PE(World world) {
-        return world.getTimeOfDay() < world.getGameRules().getInt(SleepTime);
+        return world.getTimeOfDay() < world.getGameRules().getInt(SleepTime) && !world.isThundering();
     }
 
 }

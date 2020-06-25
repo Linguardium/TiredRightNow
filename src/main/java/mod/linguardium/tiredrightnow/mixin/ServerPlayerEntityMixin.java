@@ -16,6 +16,6 @@ public class ServerPlayerEntityMixin {
 
     @Redirect(at=@At(target="Lnet/minecraft/world/World;isDay()Z",value="INVOKE"), method="trySleep")
     private boolean isItSleepyTime_SPE(World world) {
-        return world.getTimeOfDay() < world.getGameRules().getInt(SleepTime);
+        return world.getTimeOfDay() < world.getGameRules().getInt(SleepTime) && !world.isThundering();
     }
 }
